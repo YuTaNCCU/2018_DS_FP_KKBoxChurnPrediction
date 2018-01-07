@@ -3,7 +3,7 @@
 #
 # model functions
 #
-##################
+################## 
 
 m_null <- function(x,y){
   ramdom_value <- runif(n = nrow(x), min = 0, max = 7450)
