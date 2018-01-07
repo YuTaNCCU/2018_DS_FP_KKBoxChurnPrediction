@@ -6,7 +6,7 @@ To reproduce my result :
 1.Go to the kaggle website :
 https://www.kaggle.com/c/kkbox-churn-prediction-challenge
 
-2.Download the 4 datasets below:
+2.Download the 4 datasets :
 members_v3.csv.7z +
 train.csv.7z +
 transactions.csv.7z +
