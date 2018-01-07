@@ -1,8 +1,12 @@
 
+install.packages('adabag')
 library(dplyr)
 library(data.table)
-library(ggplot2)
+library(ggplot)
 library(car)
+library(adabag)
+library(rpart)
+
 
 setwd("~/Desktop/DS_KKBox")
 #quickly import the prcocessed data
