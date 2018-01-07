@@ -12,7 +12,7 @@ train.csv.7z +
 transactions.csv.7z +
 user_logs.csv.7z
 
-3.Extract and put the 4 files in the <working directory>/Data
+3.Extract and put the 4 files in the ~/working directory/Data
   
 4.Open the R file: "final_ver0108.r", and run rows.
 
