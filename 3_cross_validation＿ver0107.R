@@ -1,3 +1,6 @@
+#quickly import the prcocessed data
+train <- fread('data/train.csv', sep = ",", header=T, stringsAsFactors = T)
+test <- fread('data/test.csv', sep = ",", header=T, stringsAsFactors = T)
 
 ##################
 #

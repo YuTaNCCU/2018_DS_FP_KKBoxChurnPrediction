@@ -1,6 +1,3 @@
-#待做：看一下 m_beg 的 R^2
-#待做：m_beg還是不夠準，可以考慮將顯著的係數來平均就好
-
 ##############################
 #
 #Null Model
@@ -117,47 +114,6 @@ perf <- function( pred_vector ){
   performance <- round(c(accuracy=accuracy, precision=precision, recall=recall, F1Measure=F1Measure),3)
   print(performance)
 }
-
-
-m_null_8000
-m_logit
-m_beg_8000
-m_f
-pred_null_train
-pred_logit
-pred_bag
-pred_f <- as.numeric(as.character(pred_f))
-#R2
-1- as.vector(logLik(m_logit))/logLik(m_null_intercept)
-1- as.vector(logLik(m_beg_8000))/logLik(m_null_intercept)
-1- as.vector(logLik(m_f))/logLik(m_null_intercept)
-
-actual <- pred_null_train
-predicted <-pred_bag
-1 - (sum((actual-predicted)^2)/sum((actual-mean(actual))^2))
-caret::RMSE(predicted,actual)
-
-#f test
-anova(m_null_8000, m_logit, test = "Chisq")
-anova(m_null_8000, m_beg_8000, test = "Chisq")
-anova(m_null_8000, m_f, test = "Chisq")
-m_null_intercept
-
-anova(m_null_intercept, m_logit, test = "Chisq")
-anova(m_null_intercept, m_beg_8000, test = "Chisq")
-anova(m_null_intercept, m_f, test = "Chisq")
-
-
-#Calculating the significance of the observed fit #week14
-df.null <- dim(train)[[1]] - 1
-df.model <- dim(train)[[1]] - length(model$coefficients)
-delDev <- null.dev - resid.dev
-deldf <- df.null - df.model
-p <- pchisq(delDev, deldf, lower.tail=F)
-
-#The pseudo R-squared
-1 - (m_logit$deviance/m_null_8000$deviance)
-1 - (m_beg_8000$deviance/m_null_8000$deviance)
 
 
 
