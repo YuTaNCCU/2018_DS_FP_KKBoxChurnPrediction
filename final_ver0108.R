@@ -1,4 +1,4 @@
-#package
+#packages
 install.packages('adabag')
 library(dplyr)
 library(data.table)
@@ -6,7 +6,8 @@ library(ggplot)
 library(car)
 library(adabag)
 library(rpart)
-require(caret) 
+require(caret)
+library(foreach)
 
 #setwd("~/Desktop/DS_KKBox")
 
@@ -141,7 +142,6 @@ m_logit <- function(x,y){
 }
 
 m_bag <- function(x,y){
-  library(foreach)
   set.seed(123)
   length <- sum(x$is_churn == 1)
   iterations     <- floor( nrow(x) / length )
